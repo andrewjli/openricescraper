@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "cheerio": "^0.17.0",
+    "esprima": "^1.2.2"
   },
   "devDependencies": {},
   "scripts": {
