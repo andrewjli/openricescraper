@@ -7,9 +7,14 @@ function start() {
         var pathname = url.parse(request.url).pathname;
         var param = url.parse(request.url).search;
         if(pathname != "/favicon.ico") {
-            console.log("Request received for " + pathname)
-
-            parser.start(param, response);
+            console.log("Request received for " + pathname + " with " + param)
+            if(param != null) {
+                parser.start(param, response);
+            } else {
+                response.writeHead(416, {"Content-Type": "text/plain"});
+                response.write("Bad Request");
+                response.end();
+            }
         }
     }
     
