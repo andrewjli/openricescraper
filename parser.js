@@ -33,12 +33,18 @@ function start(param, response) {
 
 				var res_arr = [];
 
-				$("a.sr1_title").each(function() {
-					var link = $(this)
+				$("div.poiblock").each(function() {
+					var link = $(this).children(".ib").children(".sr1_poi_title").children(".sr1_title");
 					var text = link.text();
 					var href = link.attr("href");
+					
 
-					res_arr.push({ 'name': text, 'link': href })
+					var img = $(this).children(".sr1_content").children(".PR10").children(".rel_pos").children("a").children(".sr1_doorphoto");
+					var src = img.attr("style");
+					console.log(src);
+					src = src.substring(15, src.length-2);
+
+					res_arr.push({ 'name': text, 'link': href, 'img': src });
 				});
 
 
@@ -72,7 +78,7 @@ function start(param, response) {
 					if(err) return next(err);
 					//console.log(counter)
 
-					//console.log(res_arr);
+					console.log(res_arr);
 
 					response.writeHead(200, {"Content-Type": "text/plain"});
 					response.write(JSON.stringify(res_arr));
