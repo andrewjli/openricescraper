@@ -1,0 +1,24 @@
+{
+  "name": "openricescraper",
+  "version": "0.0.1",
+  "description": "OpenRice Scraper",
+  "main": "index.js",
+  "dependencies": {
+    "jsdom": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewjli/openricescraper.git"
+  },
+  "author": "Andrew Li",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/andrewjli/openricescraper/issues"
+  },
+  "homepage": "https://github.com/andrewjli/openricescraper"
+}
