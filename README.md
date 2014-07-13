@@ -22,7 +22,8 @@ install when you run `npm install`.
 ## Running
 The app is running on [Heroku](http://openricescraper.herokuapp.com/), but if
 you wish to run your own instance, you can run it (after installing it) with
-`node index.js`
+`node index.js`. The app runs on `localhost:8888` by default, but you can modify
+the port in `server.js`.
 
 ## Usage
 The app responds to HTTP GET requests. In order to get a response, you have to use
