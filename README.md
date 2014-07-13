@@ -36,6 +36,7 @@ error.
 
 The data that is returned by the server is in the form of an array of JSON objects,
 with each object containing 5 key-pair values:
+
 1. `name` -- The name of the restaurant
 2. `link` -- The path of the restaurant's OpenRice page (mainly for internal use)
 3. `img`  -- The restaurant's door image (if any)
