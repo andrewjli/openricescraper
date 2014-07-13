@@ -52,7 +52,6 @@ function start(param, response) {
 				res_arr.push({ 'name': text, 'link': href, 'img': src });
 			});
 
-			var counter = 0
 			async.each(res_arr, function(restaurant, callback) {
 				href = restaurant.link;
 				var option = {
@@ -69,14 +68,15 @@ function start(param, response) {
 
 					result.on("end", function() {
 						var $$ = cheerio.load(data);
+						restaurant.score = parseFloat($$(".rest_overall_score").children("span").text());
+						console.log(restaurant.score);
+
 						var coords = esprima.parse($$(".pg_main > script").first().text());
 						restaurant.x = coords.body[0].expression.right.value;
 						restaurant.y = coords.body[1].expression.right.value;
 
 						restaurant.distance = distance.calculateDistance(params[0][1], params[1][1], restaurant.x, restaurant.y, 4);
-						//console.log(restaurant.distance)
 
-						counter++;
 						callback();
 					});
 				});
