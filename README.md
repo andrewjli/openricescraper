@@ -4,6 +4,10 @@ This is a basic node app that scrapes data off [OpenRice](http://www.openrice.co
 search results based on RESTful requests provided to the server. This was written
 at the Codeaholics July 2014 Hackathon for Wearables in less than 48 hours.
 
+The app was written alongside [andrewjli/openriceglass](https://github.com/andrewjli/openriceglass)
+and is designed to retrieve only the necessary information for that glassware.
+Additional information will require you to modify the parser.
+
 ## Installation
 1. `git clone https://github.com/andrewjli/openricescraper.git`
 2. `npm install`
