@@ -2,6 +2,7 @@ var http = require("http");
 var cheerio = require("cheerio");
 var esprima = require("esprima")
 var async = require("async")
+var distance = require("./distance")
 
 function start(param, response) {
 	params = split(param);
@@ -71,7 +72,10 @@ function start(param, response) {
 						var coords = esprima.parse($$(".pg_main > script").first().text());
 						restaurant.x = coords.body[0].expression.right.value;
 						restaurant.y = coords.body[1].expression.right.value;
-						//console.log(restaurant.x + "," + restaurant.y);
+
+						restaurant.distance = distance.calculateDistance(params[0][1], params[1][1], restaurant.x, restaurant.y, 4);
+						//console.log(restaurant.distance)
+
 						counter++;
 						callback();
 					});
@@ -85,10 +89,6 @@ function start(param, response) {
 			});
 		});
 	});
-}
-
-function parse(response, data) {
-
 }
 
 function split(param) {
