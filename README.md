@@ -37,11 +37,14 @@ error.
 The data that is returned by the server is in the form of an array of JSON objects,
 with each object containing 5 key-pair values:
 
-1. `name` --- The name of the restaurant
-2. `link` --- The path of the restaurant's OpenRice page (mainly for internal use)
-3. `img`  --- The path of the restaurant's OpenRice door image (if any)
-4. `x`    --- The x coordinate of the restaurant
-5. `y`    --- The y coordinate of the restaurant
+1. `name`     -- The name of the restaurant
+1. `link`     -- The path of the restaurant's OpenRice page (mainly for internal use)
+1. `img`      -- The URL of the restaurant's OpenRice door image (if any)
+1. `address`  -- The address of the restaurant
+1. `score`    -- The overall score for the restaurant on OpenRice (if any)
+1. `x`        -- The x coordinate of the restaurant
+1. `y`        -- The y coordinate of the restaurant
+1. `distance` -- The distance (in kilometres) between the requested coordinates and the coordinates of the restaurant.
 
 The data returned for the above query should look something like this:
 ```JSON
